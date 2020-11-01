@@ -14,6 +14,18 @@
         <action
                 android:id="@+id/action_FirstFragment_to_SecondFragment"
                 app:destination="@id/SecondFragment"/>
+        <action
+            android:id="@+id/action_FirstFragment_to_readFragment"
+            app:destination="@id/readFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_createFragment"
+            app:destination="@id/createFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_deleteFragmentSelect"
+            app:destination="@id/deleteFragmentSelect" />
+        <action
+            android:id="@+id/action_FirstFragment_to_updateFragmentSelect"
+            app:destination="@id/updateFragmentSelect" />
     </fragment>
     <fragment
             android:id="@+id/SecondFragment"
@@ -24,5 +36,59 @@
         <action
                 android:id="@+id/action_SecondFragment_to_FirstFragment"
                 app:destination="@id/FirstFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/readFragment"
+        android:name="ubb.barcoaie.lab2_ma.ReadFragment"
+        android:label="ReadFragment" >
+        <action
+            android:id="@+id/action_readFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createFragment"
+        android:name="ubb.barcoaie.lab2_ma.CreateFragment"
+        android:label="CreateFragment" >
+        <action
+            android:id="@+id/action_createFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteFragment"
+        android:name="ubb.barcoaie.lab2_ma.DeleteFragment"
+        android:label="DeleteFragment" >
+        <action
+            android:id="@+id/action_deleteFragment_to_deleteFragmentSelect"
+            app:destination="@id/deleteFragmentSelect" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteFragmentSelect"
+        android:name="ubb.barcoaie.lab2_ma.DeleteFragmentSelect"
+        android:label="DeleteFragmentSelect" >
+        <action
+            android:id="@+id/action_deleteFragmentSelect_to_deleteFragment"
+            app:destination="@id/deleteFragment" />
+        <action
+            android:id="@+id/action_deleteFragmentSelect_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="ubb.barcoaie.lab2_ma.UpdateFragment"
+        android:label="UpdateFragment" >
+        <action
+            android:id="@+id/action_updateFragment_to_updateFragmentSelect"
+            app:destination="@id/updateFragmentSelect" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragmentSelect"
+        android:name="ubb.barcoaie.lab2_ma.UpdateFragmentSelect"
+        android:label="UpdateFragmentSelect" >
+        <action
+            android:id="@+id/action_updateFragmentSelect_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_updateFragmentSelect_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
