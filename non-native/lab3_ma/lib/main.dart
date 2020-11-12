@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lab3_ma/Domain/Vegetable.dart';
+import 'package:lab3_ma/Repository/VegetableRepo.dart';
+
+import 'UI/MainPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,6 +12,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    VegetableRepo vegetableRepo = new VegetableRepo();
     return MaterialApp(
       title: 'Lab3_MA',
       theme: ThemeData(
@@ -26,124 +31,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MainPage(title: 'Lab3_MA'),
-    );
-  }
-}
-
-class MainPage extends StatefulWidget {
-  MainPage({Key key, this.title}): super(key: key);
-
-  final String title;
-
-  @override
-  _MainPageState createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text("MainPage dummy text")
-            ],
-          )
-      ),
-    );
-  }
-
-}
-
-class ReadPage extends StatefulWidget {
-  ReadPage({Key key, this.title}): super(key: key);
-
-  final String title;
-
-  @override
-  _ReadPageState createState() => _ReadPageState();
-}
-
-class _ReadPageState extends State<ReadPage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text("ReadPage dummy text")
-            ],
-          )
-      ),
-    );
-  }
-}
-
-class CreatePage extends StatefulWidget {
-  CreatePage({Key key, this.title}): super(key: key);
-
-  final String title;
-
-  @override
-  _CreatePageState createState() => _CreatePageState();
-}
-
-class _CreatePageState extends State<CreatePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text("CreatePage dummy text")
-            ],
-          )
-      ),
-    );
-  }
-}
-
-
-class DeletePage extends StatefulWidget {
-  DeletePage({Key key, this.title}): super(key: key);
-
-  final String title;
-
-  @override
-  _DeletePageState createState() => _DeletePageState();
-}
-
-class _DeletePageState extends State<DeletePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text("CreatePage dummy text")
-            ],
-          )
-      ),
+      home: MainPage(title: 'Lab3_MA',),
     );
   }
 }
