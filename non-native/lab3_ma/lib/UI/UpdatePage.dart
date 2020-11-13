@@ -19,20 +19,22 @@ class _UpdatePageState extends State<UpdatePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: ListView.separated(
-        itemCount: vegetableRepo.vegetables.isEmpty ? null : vegetableRepo.vegetables.length,
+      body: vegetableRepo.vegetables.isNotEmpty ? ListView.separated(
+        itemCount: vegetableRepo.vegetables.length,
         itemBuilder: (context, index) {
-          if (vegetableRepo.vegetables.isEmpty) {
-            return ListTile();
-          }
-          else
-            return ListTile(
-              title: Text(vegetableRepo.vegetables[index].name),
-            );
+          return ListTile(
+            title: Text(vegetableRepo.vegetables[index].name),
+            onLongPress: () {
+              Scaffold.of(context).showSnackBar(SnackBar(content: Text(vegetableRepo.vegetables[index].name),));
+            },
+          );
         },
         separatorBuilder: (context, index) {
           return Divider();
         },
+      ) :
+      Center(
+        child: Text("Nothing to update!"),
       ),
     );
   }

@@ -19,21 +19,38 @@ class _DeletePageState extends State<DeletePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: ListView.separated(
-        itemCount: vegetableRepo.vegetables.isEmpty ? null : vegetableRepo.vegetables.length,
+      body: vegetableRepo.vegetables.isNotEmpty ? ListView.separated(
+        itemCount: vegetableRepo.vegetables.length,
         itemBuilder: (context, index) {
-          if (vegetableRepo.vegetables.isEmpty) {
-            return ListTile();
-          }
-          else
-            return ListTile(
-              title: Text("name = " + vegetableRepo.vegetables[index].name + "; price = " + vegetableRepo.vegetables[index].price.toString()),
-            );
+          return ListTile(
+            title: Text("name = " + vegetableRepo.vegetables[index].name + "; price = " + vegetableRepo.vegetables[index].price.toString()),
+            onLongPress: () {
+              showDialog(context: context,
+                builder: (BuildContext dialogContext) {
+                  return AlertDialog(
+                    title: Text("Delete Confirmation"),
+                    content: Text("Are you sure you want to delete this?"),
+                    actions: [
+                      FlatButton(onPressed: () { Navigator.of(dialogContext).pop(); }, child: Text("Cancel")),
+                      FlatButton(onPressed: () {
+                        vegetableRepo.removeVegetable(vegetableRepo.vegetables[index]);
+                        setState(() {});
+                        Navigator.of(dialogContext).pop();
+                        }, child: Text("Continue")),
+                    ],
+                  );
+                },
+              );
+            },
+          );
         },
         separatorBuilder: (context, index) {
           return Divider();
         },
-      ),
+      ) :
+      Center(
+        child: Text("Nothing to delete!"),
+      )
     );
   }
 }
