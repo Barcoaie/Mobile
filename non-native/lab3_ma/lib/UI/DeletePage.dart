@@ -23,7 +23,7 @@ class _DeletePageState extends State<DeletePage> {
         itemCount: vegetableRepo.vegetables.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text("name = " + vegetableRepo.vegetables[index].name + "; price = " + vegetableRepo.vegetables[index].price.toString()),
+            title: Text(vegetableRepo.vegetables[index].name),
             onLongPress: () {
               showDialog(context: context,
                 builder: (BuildContext dialogContext) {

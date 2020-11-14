@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lab3_ma/Repository/VegetableRepo.dart';
 
+import '../utils.dart';
+import 'UpdateDetailPage.dart';
+
 class UpdatePage extends StatefulWidget {
   UpdatePage({Key key, this.title}): super(key: key);
 
@@ -24,8 +27,12 @@ class _UpdatePageState extends State<UpdatePage> {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(vegetableRepo.vegetables[index].name),
-            onLongPress: () {
-              Scaffold.of(context).showSnackBar(SnackBar(content: Text(vegetableRepo.vegetables[index].name),));
+            onLongPress: () async {
+              await Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => UpdateDetailPage(title: "Update page - details"),
+                  settings: RouteSettings(arguments: Arguments(vegetableRepo, index)),
+                  ));
+              setState(() {});
             },
           );
         },

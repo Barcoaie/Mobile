@@ -17,7 +17,7 @@ class VegetableRepo {
 
   void updateVegetable(index, vegetable) {
     vegetables.removeAt(index);
-    vegetables.add(vegetable);
+    vegetables.insert(index, vegetable);
   }
 
   List<Vegetable> getVegetables() {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lab3_ma/Domain/Vegetable.dart';
 import 'package:lab3_ma/Repository/VegetableRepo.dart';
+import 'package:lab3_ma/UI/ReadDetailPage.dart';
+import 'package:lab3_ma/utils.dart';
 
 class ReadPage extends StatefulWidget {
   ReadPage({Key key, this.title}): super(key: key);
@@ -25,6 +27,14 @@ class _ReadPageState extends State<ReadPage> {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(vegetableRepo.vegetables[index].name),
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => ReadDetailPage(title: "Read page - detail",),
+                      settings: RouteSettings(arguments: Arguments(vegetableRepo,index))
+                  )
+              );
+            }
           );
         },
         separatorBuilder: (context, index) {
