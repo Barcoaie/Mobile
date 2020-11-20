@@ -27,48 +27,47 @@ class MainActivity : AppCompatActivity() {
         readBtn.setOnClickListener {
             val intent = Intent(this,ReadActivity::class.java)
             intent.putExtra("Repo", repo)
-            startActivity(intent)
+            startActivityForResult(intent, 2)
         }
 
         val createBtn:Button = findViewById(R.id.button_create)
         createBtn.setOnClickListener {
             val intent = Intent(this,CreateActivity::class.java)
             intent.putExtra("Repo", repo)
-            startActivity(intent)
+            startActivityForResult(intent, 1)
         }
 
         val deleteBtn:Button = findViewById(R.id.button_delete)
         deleteBtn.setOnClickListener {
             val intent = Intent(this,DeleteActivity::class.java)
             intent.putExtra("Repo", repo)
-            startActivity(intent)
+            startActivityForResult(intent, 4)
         }
 
         val updateBtn:Button = findViewById(R.id.button_update)
         updateBtn.setOnClickListener {
             val intent = Intent(this,UpdateActivity::class.java)
             intent.putExtra("Repo", repo)
-            startActivity(intent)
-        }
-
-        if(intent.extras?.get("Repo") != null) {
-            repo = intent.extras?.get("Repo") as VegetableRepoImpl
+            startActivityForResult(intent,3)
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                repo = intent.extras?.get("Repo") as VegetableRepoImpl
+            }
+        }
+        if (requestCode == 3) {
+            if (resultCode == RESULT_OK) {
+                repo = intent.extras?.get("Repo") as VegetableRepoImpl
+            }
+        }
+        if (requestCode == 4) {
+            if (resultCode == RESULT_OK) {
+                repo = intent.extras?.get("Repo") as VegetableRepoImpl
+            }
         }
     }
 

@@ -33,8 +33,9 @@ class UpdateActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         System.out.println("pressed back")
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent()
         intent.putExtra("Repo", repo);
-        startActivity(intent)
+        setResult(RESULT_OK, intent)
+        this.finish()
     }
 }

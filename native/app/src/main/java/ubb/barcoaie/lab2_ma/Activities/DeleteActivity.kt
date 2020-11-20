@@ -31,8 +31,9 @@ class DeleteActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent()
+        setResult(RESULT_OK, intent)
         intent.putExtra("Repo", repo)
-        startActivity(intent)
+        this.finish()
     }
 }
