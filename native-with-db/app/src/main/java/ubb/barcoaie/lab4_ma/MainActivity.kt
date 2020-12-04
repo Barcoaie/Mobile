@@ -10,7 +10,6 @@ import ubb.barcoaie.lab4_ma.Activities.Delete.DeleteActivity
 import ubb.barcoaie.lab4_ma.Activities.Read.ReadActivity
 import ubb.barcoaie.lab4_ma.Activities.Update.UpdateActivity
 import ubb.barcoaie.lab4_ma.Model.Vegetable
-import ubb.barcoaie.lab4_ma.Service.VegetableService
 
 class MainActivity : AppCompatActivity() {
     private val VEGETABLE_CREATE_REQUEST_CODE = 1
