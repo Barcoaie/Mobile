@@ -28,4 +28,16 @@ public class VegetableRepo {
             vegetableDao.insert(vegetable);
         });
     }
+
+    public void delete(Vegetable vegetable) {
+        VegetableDatabase.databaseWriteExecutor.execute(() -> {
+            vegetableDao.delete(vegetable.getId());
+        });
+    }
+
+    public void update(Vegetable vegetable, String name, int price) {
+        VegetableDatabase.databaseWriteExecutor.execute(() -> {
+            vegetableDao.update(vegetable.getId(), name, price);
+        });
+    }
 }

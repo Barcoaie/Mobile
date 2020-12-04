@@ -1,4 +1,4 @@
-package ubb.barcoaie.lab4_ma;
+package ubb.barcoaie.lab4_ma.Activities.Read;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import ubb.barcoaie.lab4_ma.Model.Vegetable;
+import ubb.barcoaie.lab4_ma.R;
 
 public class VegetableViewHolder extends RecyclerView.ViewHolder {
     private final TextView vegetableItemView;

@@ -19,9 +19,9 @@ public abstract class VegetableDatabase extends RoomDatabase {
     public abstract VegetableDao vegetableDao();
 
     private static volatile VegetableDatabase INSTANCE;
-    static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(4);
+    public static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(4);
 
-    static VegetableDatabase getDatabase(final Context context) {
+    public static VegetableDatabase getDatabase(final Context context) {
         if(INSTANCE == null) {
             synchronized (VegetableDatabase.class) {
                 if (INSTANCE == null) {

@@ -23,11 +23,15 @@ public class VegetableViewModel extends AndroidViewModel {
         allVegetables = vegetableRepo.getAllVegetables();
     }
 
-    LiveData<List<Vegetable>> getAllVegetables() {
+    public LiveData<List<Vegetable>> getAllVegetables() {
         return allVegetables;
     }
 
+    /*
     public void insert(Vegetable vegetable) {
         vegetableRepo.insert(vegetable);
     }
+
+    public void delete(Vegetable vegetable) { vegetableRepo.delete(vegetable);}
+    */
 }

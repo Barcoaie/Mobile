@@ -1,7 +1,4 @@
-package ubb.barcoaie.lab4_ma;
-
-import android.content.Intent;
-import android.os.Bundle;
+package ubb.barcoaie.lab4_ma.Activities.Update;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,18 +8,22 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import ubb.barcoaie.lab4_ma.Service.VegetableService;
+import android.content.Intent;
+import android.os.Bundle;
 
-public class ReadActivity extends AppCompatActivity {
+import ubb.barcoaie.lab4_ma.R;
+import ubb.barcoaie.lab4_ma.VegetableViewModel;
+
+public class UpdateActivity extends AppCompatActivity {
     private VegetableViewModel vegetableViewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_read);
+        setContentView(R.layout.activity_update);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        final VegetableListAdapter adapter = new VegetableListAdapter(new VegetableListAdapter.VegetableDiff());
+        final VegetableListAdapterUpd adapter = new VegetableListAdapterUpd(new VegetableListAdapterUpd.VegetableDiff());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -40,6 +41,6 @@ public class ReadActivity extends AppCompatActivity {
     public void onBackPressed() {
         Intent replyIntent = new Intent();
         setResult(RESULT_OK, replyIntent);
-        ReadActivity.this.finish();
+        UpdateActivity.this.finish();
     }
 }

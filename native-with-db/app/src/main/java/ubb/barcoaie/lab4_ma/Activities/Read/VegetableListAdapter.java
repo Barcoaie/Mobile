@@ -1,4 +1,4 @@
-package ubb.barcoaie.lab4_ma;
+package ubb.barcoaie.lab4_ma.Activities.Read;
 
 import android.view.ViewGroup;
 

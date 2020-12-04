@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateActivity"></activity>
-        <activity android:name=".DeleteActivity" />
-        <activity android:name=".CreateActivity" />
+        <activity android:name=".Activities.Update.UpdateActivity"></activity>
+        <activity android:name=".Activities.Delete.DeleteActivity" />
+        <activity android:name=".Activities.Create.CreateActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReadActivity" />
+        <activity android:name=".Activities.Read.ReadActivity" />
     </application>
 
 </manifest>
