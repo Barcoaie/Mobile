@@ -1,5 +1,6 @@
 package ubb.barcoaie.server.config;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -17,5 +18,10 @@ public class ProjectConfiguration {
                         .allowedMethods("GET", "PUT", "POST", "DELETE");
             }
         };
+    }
+
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
     }
 }
