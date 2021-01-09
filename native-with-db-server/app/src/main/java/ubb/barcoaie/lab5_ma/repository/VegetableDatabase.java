@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import ubb.barcoaie.lab5_ma.domain.Vegetable;
+import ubb.barcoaie.lab5_ma.model.Vegetable;
 
 @Database(entities = {Vegetable.class}, version = 1, exportSchema = false)
 public abstract class VegetableDatabase extends RoomDatabase {

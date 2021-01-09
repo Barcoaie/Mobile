@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">native-with-db-server</string>
+    <string name="app_name">Lab4_MA</string>
+    <string name="button_read">Read all Vegetables</string>
+    <string name="button_create">Create a Vegetable</string>
+    <string name="button_update">Update a Vegetable</string>
+    <string name="button_delete">Delete a Vegetable</string>
 </resources>

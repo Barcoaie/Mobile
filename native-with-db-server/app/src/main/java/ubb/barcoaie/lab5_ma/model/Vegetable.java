@@ -1,4 +1,4 @@
-package ubb.barcoaie.lab5_ma.domain;
+package ubb.barcoaie.lab5_ma.model;
 
 
 import androidx.annotation.NonNull;

@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import ubb.barcoaie.lab5_ma.domain.Vegetable;
+import ubb.barcoaie.lab5_ma.model.Vegetable;
 
 public class VegetableRepo {
 

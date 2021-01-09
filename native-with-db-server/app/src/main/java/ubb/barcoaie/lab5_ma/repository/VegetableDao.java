@@ -7,7 +7,7 @@ import androidx.room.Query;
 
 import java.util.List;
 
-import ubb.barcoaie.lab5_ma.domain.Vegetable;
+import ubb.barcoaie.lab5_ma.model.Vegetable;
 
 public interface VegetableDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -26,5 +26,5 @@ public interface VegetableDao {
     LiveData<List<Vegetable>> getVegetables();
 
     @Query("SELECT * FROM Vegetable WHERE onServer = -1")
-    LiveData<List<Vegetable>> getLocalStoredVegetables();
+    List<Vegetable> getLocalStoredVegetables();
 }
