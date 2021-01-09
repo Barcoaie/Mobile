@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class VegetableDto extends BaseDto{
+    private int onServer;
     private String name;
     private int price;
 }

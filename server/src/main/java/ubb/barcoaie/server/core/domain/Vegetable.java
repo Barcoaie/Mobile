@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 @Builder
 public class Vegetable extends BaseEntity<Long> {
     @Column(length = 20)
+    private int onServer;
+    @Column(length = 20)
     private String name;
     @Column(length = 20)
     private int price;
