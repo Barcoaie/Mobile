@@ -1,3 +1,5 @@
+Labs that I had for Mobile Applications course.
+
 # crudProject
 See the CRUD project details from here: http://www.cs.ubbcluj.ro/~dan/ma/labPlan.html
 
